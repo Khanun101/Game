@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Shoot Blitz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="ui">
+    <div class="hud">
+      <div id="score">คะแนน: 0</div>
+      <div id="lives">พลังชีวิต: 3</div>
+      <div id="wave">ระลอก: 1</div>
+    </div>
+    <div id="start-screen" class="overlay visible">
+      <h1>Shoot Blitz</h1>
+      <p>เกมยิงปืนสไตล์เบสิค ยิงให้ไว หลบให้ทัน!</p>
+      <button id="start-btn">เริ่มเกม</button>
+      <p class="hint">คีย์บอร์ด: ← → หรือ A/D เพื่อขยับ, Space ยิง • มือถือ: ปุ่มซ้าย/ขวา + ยิง</p>
+    </div>
+    <div id="game-over" class="overlay">
+      <h2>เกมโอเวอร์</h2>
+      <p id="final-score">คุณทำคะแนนได้ 0</p>
+      <button id="restart-btn">เล่นอีกครั้ง</button>
+    </div>
+    <div id="controls" role="group" aria-label="Mobile controls">
+      <button id="btn-left" class="ctrl">◀</button>
+      <button id="btn-shoot" class="ctrl shoot">●</button>
+      <button id="btn-right" class="ctrl">▶</button>
+    </div>
+  </div>
+  <canvas id="game"></canvas>
+  <script src="game.js"></script>
+</body>
+</html>

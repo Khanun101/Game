@@ -1,0 +1,55 @@
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0b1020;color:#f2f5ff;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+#game{position:fixed;inset:0;display:block;background:radial-gradient(1200px 800px at 50% -200px,#152040 0%,#0b1020 60%,#070b18 100%)}
+#ui{position:fixed;inset:0;pointer-events:none}
+.hud{position:absolute;top:10px;left:10px;display:flex;gap:12px;background:rgba(0,0,0,.25);padding:8px 12px;border-radius:12px;backdrop-filter:blur(6px)}
+.hud div{font-weight:600}
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:.2s}
+.overlay.visible{opacity:1;visibility:visible}
+.overlay h1{font-size:48px;margin:0}
+.overlay h2{font-size:36px;margin:0}
+.overlay button{pointer-events:auto;font-weight:700;background:#2f6cf5;border:none;color:#fff;padding:12px 20px;border-radius:12px;box-shadow:0 6px 20px rgba(47,108,245,.4);cursor:pointer}
+.overlay .hint{opacity:.85;font-size:14px;margin-top:8px}
+#controls{position:absolute;bottom:16px;left:0;right:0;display:flex;justify-content:space-between;gap:12px;padding:0 12px;pointer-events:auto}
+.ctrl{width:72px;height:72px;border-radius:999px;border:none;background:rgba(255,255,255,.08);color:#fff;font-size:24px;backdrop-filter:blur(6px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.shoot{width:84px;height:84px;font-size:28px}
+@media (min-width: 900px){
+  #controls{display:none}
+}
+
+
+/* Mobile enhancements */
+html, body {
+  overscroll-behavior: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+#controls {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+.ctrl {
+  width: 92px;
+  height: 92px;
+  font-size: 28px;
+}
+
+.shoot {
+  width: 108px;
+  height: 108px;
+  font-size: 32px;
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .ctrl { width: 76px; height: 76px; font-size: 22px; }
+  .shoot { width: 92px; height: 92px; font-size: 26px; }
+}
+
+/* Landscape mobile: push controls up a bit */
+@media (max-height: 420px) and (orientation: landscape) {
+  #controls { bottom: 8px; }
+}
